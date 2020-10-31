@@ -1,1 +1,15 @@
 .DS_Store
+
+# create a new branch and navigate to it
+# git checkout -b branchNameHere
+
+# switch between branches
+# git checkout branchNameHere
+
+# add changes to git branch for commit & push
+# while in branch
+# git add .
+# git commit -m "message here"
+# git push origin branchNameHere
+
+# then go into git and create the pull request
