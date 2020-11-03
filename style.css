@@ -1,6 +1,7 @@
 html {
-    background: url(https://images.unsplash.com/photo-1565130838609-c3a86655db61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60) no-repeat center fixed;
-    background-size: cover;
+  background: url(https://images.unsplash.com/photo-1565130838609-c3a86655db61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60)
+    no-repeat center fixed;
+  background-size: cover;
 }
 /* 
 #img.source-image {
@@ -11,48 +12,48 @@ html {
 } */
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #header {
-    text-align: center;
-    font-size: xx-large;
-    margin-top: 20px;
-    color: whitesmoke;
-    font-weight: bold;
+  text-align: center;
+  font-size: xx-large;
+  margin-top: 20px;
+  color: whitesmoke;
+  font-weight: bold;
 }
 
 .icon {
-    color: black;
+  color: black;
 }
 
 .border {
-    border-bottom: solid whitesmoke 1px;
-    padding: 10px;
+  border-bottom: solid whitesmoke 1px;
+  padding: 10px;
 }
 
 h2 {
-    color: whitesmoke;
-    font-weight: 500;
-    white-space: pre-line;
-    text-align: center;
+  color: whitesmoke;
+  font-weight: 500;
+  white-space: pre-line;
+  text-align: center;
 }
 
 p {
-    color: whitesmoke;
-    font-weight: 400;
-    white-space: pre-line;
-    text-align: center; 
+  color: whitesmoke;
+  font-weight: 400;
+  white-space: pre-line;
+  text-align: center;
 }
 
 #searchBar {
-    width: 25rem;
-    color: whitesmoke;
-    border: solid 1.5px;
+  width: 25rem;
+  color: whitesmoke;
+  border: solid 1.5px;
 }
 
 #searchBtn {
-    padding: 10px;
-    background: black;
-    color: whitesmoke;
+  padding: 10px;
+  background: black;
+  color: whitesmoke;
 }
