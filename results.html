@@ -12,28 +12,30 @@
 
 </head>
 <body>
-    <header>
-        <nav class="uk-navbar">
-          <div class="uk-navbar-left">
-            <i class="fas fa-music icon"></i>
-      <h1 id='logo' >Elemental Listening</h1>
-      <i class="fas fa-music icon"></i>
+  <header>
+    <nav class="uk-navbar uk-flex uk-flex-center">
+        <!-- <i class="fas fa-music icon uk-flex uk-flex-center"></i> -->
+  <h1 id='logo' class='uk-flex uk-flex-left'>
+    <i class="fas fa-music icon" id='leftIcon'></i>
+    Elemental Listening
+    <i class="fas fa-music icon" id='rightIcon'></i>
+  </h1>
+  <!-- <i class="fas fa-music icon uk-flex uk-flex-center"></i> -->
+  <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+      <div class="uk-navbar-item">
+        <a href="index.html" class='link'>Home</a></div>
+      <div class="uk-navbar-item">
+         <a href="about.html" class='link'>About</a></div>
+      </ul>
       </div>
-      <div class="uk-navbar-right">
-          <ul class="uk-navbar-nav">
-          <div class="uk-navbar-item">
-            <a href="index.html" class='link'>Home</a></div>
-          <div class="uk-navbar-item">
-             <a href="about.html" class='link'>About</a></div>
-          </ul>
-          </div>
-      </nav>
-        <!-- <i class="fas fa-music icon"></i>
-      Elemental Listening
-      <i class="fas fa-music icon"></i> -->
-      <div class='border'>
-      </div>
-    </header>
+  </nav>
+    <!-- <i class="fas fa-music icon"></i>
+  Elemental Listening
+  <i class="fas fa-music icon"></i> -->
+  <div class='border'>
+  </div>
+</header>
   <section>
     <form class="uk-search uk-search-default uk-flex-left">
         <input class="uk-search-input" type="search" placeholder="Enter location..." id='searchBar'>
@@ -41,6 +43,23 @@
     </form>
   <article class='uk-flex-right weather-display'>
     </article>
+  </section>
+  <section>
+    <!-- first card -->
+    <div class="uk-card-small uk-card-primary uk-card-body uk-width-1-2@m">
+      <h3 class="uk-card-title">Playlist 1</h3>
+      <p>Playlist Info</p>
+  </div>
+  <!-- second card -->
+  <div class="uk-card-small uk-card-primary uk-card-body uk-width-1-2@m">
+    <h3 class="uk-card-title">Playlist 2</h3>
+    <p>Playlist Info</p>
+</div>
+<!-- third card -->
+<div class="uk-card-small uk-card-primary uk-card-body uk-width-1-2@m">
+  <h3 class="uk-card-title">Playlist 3</h3>
+  <p>Playlist Info</p>
+</div>
   </section>
 </body>
 </html>
