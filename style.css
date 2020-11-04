@@ -17,10 +17,19 @@ body {
 
 #logo {
   font-size: large;
-  /* margin-top: 20px; */
   color: black;
   font-weight: bold;
   margin-left: 5px;
+  margin-top: 3rem;
+}
+
+#leftIcon {
+  padding: 5px;
+}
+
+#rightIcon {
+  margin-top: 5px;
+  transform: rotateY(180deg);
 }
 
 .link {

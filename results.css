@@ -3,6 +3,13 @@ html {
     no-repeat center fixed;
   background-size: cover;
 }
+/* 
+#img.source-image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+} */
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -10,9 +17,19 @@ body {
 
 #logo {
   font-size: large;
-  /* margin-top: 20px; */
   color: black;
   font-weight: bold;
+  margin-left: 5px;
+  margin-top: 3rem;
+}
+
+#leftIcon {
+  padding: 5px;
+}
+
+#rightIcon {
+  margin-top: 5px;
+  transform: rotateY(180deg);
 }
 
 .link {
@@ -33,14 +50,19 @@ body {
   padding: 10px;
 }
 
+.firstSection {
+  margin-top: 20px;
+}
+
 .weather-display {
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  height: 300px;
   border: solid black 1px;
 }
 
 #searchBar {
-  width: 25rem;
+  margin-top: 50px;
+  width: 15rem;
   color: whitesmoke;
   border: solid 1.5px;
 }
