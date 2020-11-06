@@ -8,16 +8,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#recentSearch {
-  color: whitesmoke;
-  margin-top: 20px;
-}
-
-h4 {
+/* h4 {
   color: black;
   font-size: smaller;
   text-align: center;
-}
+} */
 
 #logo {
   font-size: large;
@@ -54,57 +49,74 @@ h4 {
   padding: 10px;
 }
 
+.form {
+  /* white-space: nowrap; */
+  margin-left: 10px;
+}
+
+#currentSearch {
+  color: whitesmoke;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: large;
+}
+
 #searchCard {
   background: none;
 }
 
-#weatherCard {
+.uk-divider-small {
+  margin-top: 25px;
+}
+
+#recentSearch {
+  color: whitesmoke;
+  margin-top: 15px;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: large;
+}
+
+#recentDropdown {
+  width: 15rem;
+  color: whitesmoke;
+  border: solid 1.5px;
   background: none;
 }
 
-.weather-display {
-  padding: 5px;
-  width: 300px;
-  height: 200px;
-  border: solid black 1px;
-  margin-top: 25px;
-  /* margin-left: 10rem; */
-  /* margin-right: 10px; */
-}
-
 #searchBar {
-  margin-top: 25px;
   width: 15rem;
   color: whitesmoke;
   border: solid 1.5px;
 }
 
 #searchBtn {
-  /* margin-top: 25px; */
   padding: 10px;
   background: black;
   color: whitesmoke;
 }
 
-#form-stacked-select {
-  width: 15rem;
-  color: whitesmoke;
-  border: solid 1.5px;
+#weatherCard {
+  float: right;
   background: none;
 }
 
-.option {
-  width: 15rem;
-  background: none;
+figure {
+  color: whitesmoke;
 }
+
+/* .weather-display {
+  padding: 5px;
+  width: 300px;
+  height: 200px;
+  border: solid black 1px;
+  margin-top: 15px;
+  margin-left: 15px;
+} */
 
 #musicIcon {
   color: whitesmoke;
 }
-
-/* .uk-heading-line {
-  text-decoration-color: black;
-} */
 
 .uk-card {
   border: black solid 1px;
