@@ -69,3 +69,9 @@ html {
     text-align: center;
     color: black;
 }
+
+h4 {
+  color: whitesmoke;
+  font-size: smaller;
+  text-align: center;
+}
