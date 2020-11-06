@@ -75,3 +75,9 @@ p {
   background: black;
   color: whitesmoke;
 }
+
+h4 {
+  color: black;
+  font-size: smaller;
+  text-align: center;
+}

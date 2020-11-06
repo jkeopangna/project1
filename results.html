@@ -38,30 +38,47 @@
 </header>
 
 
-<section class='uk-grid-large'>
-    <div class="uk-child-width-1-2" uk-grid>
-      <form class="uk-search uk-search-default">
+<section class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <!-- <div class="uk-child-width-1-2 uk-flex-center" uk-grid> -->
+      <!-- <div class='uk-column-1-2 resultsContainer'> -->
+        <div class="uk-card uk-card-default uk-card-body">
+      <form class="uk-search uk-search-default form">
         <input class="uk-search-input" type="search" placeholder="Enter location..." id='searchBar'></input>
-        <button uk-icon="soundcloud" id='searchBtn'></button>
+        <button class='uk-flex-center' uk-icon="soundcloud" id='searchBtn'></button>
+        <!-- <div class="uk-flex-center"> -->
+          <label class="uk-form-label" for="form-stacked-select">
+            <h3 class="uk-heading-divider">Recent Locations:</h3>
+          </label>
+          <!-- <div class="uk-form-controls"> -->
+              <select class="uk-select uk-form-controls" id="form-stacked-select">
+                  <option class='option'></option>
+                  <option class='option'></option>
+              </select>
+          <!-- </div> -->
+      <!-- </div> -->
     </form>
-    <div>
-        <div class="uk-child-width-1-2 uk-text-center" uk-grid>
-          <article class='weather-display'>
-          </article>
         </div>
-    </div>
-</div>
+  <!-- </div> -->
+  <div class="uk-card uk-card-default uk-card-body">
+        <figure class=""">
+          <article class='uk-flex uk-flex-center uk-position-center weather-display' uk-grid>
+          </article>
+          </figure>
+  </div>
+        <!-- </div>
+      </div> -->
+</section>
+<section>
+  <h1 class="uk-heading-line uk-text-center uk-sticky"><span uk-icon="icon: gitter" id='musicIcon'></span></h1>
 </section>
 
 
-    <!-- <section class="uk-column-1-2 uk-column-divider firstSection">
-      <form class="uk-search uk-search-default uk-flex uk-flex-center">
-        <input class="uk-search-input" type="search" placeholder="Enter location..." id='searchBar'></input>
-        <button uk-icon="soundcloud" id='searchBtn'></button>
-    </form>
- 
-    <article class='weather-display'>
-    </article>
-  </section> -->
+  <footer class='uk-flex uk-flex-center uk-sticky footer uk-position-bottom-center'>
+    <h4>
+      &copy 2020 by Jeff-3. 
+      <br>
+      Elemental Listening is Powered by DU Bootcamp
+    </h4>
+  </footer>
 </body>
 </html>
