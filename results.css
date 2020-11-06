@@ -15,6 +15,17 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h3 {
+  color: black;
+  margin-top: 20px;
+}
+
+h4 {
+  color: black;
+  font-size: smaller;
+  text-align: center;
+}
+
 #logo {
   font-size: large;
   color: black;
@@ -48,4 +59,58 @@ body {
 .border {
   border-bottom: solid black 1px;
   padding: 10px;
+<<<<<<< HEAD
+}
+
+.uk-card{
+  background: none;
+}
+/* .resultsContainer {
+  margin-left: 50px;
+} */
+
+.weather-display {
+  padding: 5px;
+  width: 300px;
+  height: 200px;
+  border: solid black 1px;
+  margin-top: 25px;
+  /* margin-left: 10rem; */
+  /* margin-right: 10px; */
+}
+
+#searchBar {
+  margin-top: 25px;
+  width: 15rem;
+  color: whitesmoke;
+  border: solid 1.5px;
+}
+
+#searchBtn {
+  /* margin-top: 25px; */
+  padding: 10px;
+  background: black;
+  color: whitesmoke;
+}
+
+#form-stacked-select {
+  width: 15rem;
+  color: whitesmoke;
+  border: solid 1.5px;
+  background: none;
+}
+
+.option {
+  width: 15rem;
+  background: none;
+}
+
+#musicIcon {
+  color: whitesmoke;
+}
+
+.uk-heading-line {
+  text-decoration-color: black;
+=======
+>>>>>>> main
 }
