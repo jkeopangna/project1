@@ -4,19 +4,12 @@ html {
   background-size: cover;
 }
 
-/* 
-#img.source-image {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-} */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h3 {
-  color: black;
+#recentSearch {
+  color: whitesmoke;
   margin-top: 20px;
 }
 
@@ -59,15 +52,15 @@ h4 {
 .border {
   border-bottom: solid black 1px;
   padding: 10px;
-<<<<<<< HEAD
 }
 
-.uk-card{
+#searchCard {
   background: none;
 }
-/* .resultsContainer {
-  margin-left: 50px;
-} */
+
+#weatherCard {
+  background: none;
+}
 
 .weather-display {
   padding: 5px;
@@ -109,8 +102,27 @@ h4 {
   color: whitesmoke;
 }
 
-.uk-heading-line {
+/* .uk-heading-line {
   text-decoration-color: black;
-=======
->>>>>>> main
+} */
+
+.uk-card {
+  border: black solid 1px;
+  background: whitesmoke;
+}
+
+h3 {
+  font-weight: bolder;
+  color: whitesmoke;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+h4 {
+  color: whitesmoke;
+  font-size: smaller;
+  text-align: center;
 }

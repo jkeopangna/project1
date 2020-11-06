@@ -39,15 +39,13 @@
 
 
 <section class="uk-child-width-expand@s uk-text-center" uk-grid>
-    <!-- <div class="uk-child-width-1-2 uk-flex-center" uk-grid> -->
-      <!-- <div class='uk-column-1-2 resultsContainer'> -->
-        <div class="uk-card uk-card-default uk-card-body">
+        <div class="uk-card uk-card-default uk-card-body" id='searchCard'>
       <form class="uk-search uk-search-default form">
         <input class="uk-search-input" type="search" placeholder="Enter location..." id='searchBar'></input>
         <button class='uk-flex-center' uk-icon="soundcloud" id='searchBtn'></button>
         <!-- <div class="uk-flex-center"> -->
           <label class="uk-form-label" for="form-stacked-select">
-            <h3 class="uk-heading-divider">Recent Locations:</h3>
+            <h3 id='recentSearch'>Recent Locations:</h3>
           </label>
           <!-- <div class="uk-form-controls"> -->
               <select class="uk-select uk-form-controls" id="form-stacked-select">
@@ -59,8 +57,8 @@
     </form>
         </div>
   <!-- </div> -->
-  <div class="uk-card uk-card-default uk-card-body">
-        <figure class=""">
+  <div class="uk-card uk-card-default uk-card-body" id='weatherCard'>
+        <figure class="">
           <article class='uk-flex uk-flex-center uk-position-center weather-display' uk-grid>
           </article>
           </figure>
@@ -71,9 +69,9 @@
 <section>
   <h1 class="uk-heading-line uk-text-center uk-sticky"><span uk-icon="icon: gitter" id='musicIcon'></span></h1>
 </section>
-
-
-  <footer class='uk-flex uk-flex-center uk-sticky footer uk-position-bottom-center'>
+<section id='cardResults'>
+</section>
+  <footer class='uk-flex uk-flex-center footer'>
     <h4>
       &copy 2020 by Jeff-3. 
       <br>
@@ -81,4 +79,5 @@
     </h4>
   </footer>
 </body>
+<script src='spotify.js'></script>
 </html>
