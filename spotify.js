@@ -31,7 +31,7 @@ function getPlaylists() {
       //fetch method to retrieve playlists from spotify
 
       //var spotifyUrl = "https://api.spotify.com/v1/search?" + weatherString + "&type=playlist";
-      fetch("https://api.spotify.com/v1/search?q=rainy%20day&type=playlist", {
+      fetch("https://api.spotify.com/v1/search?q=sunny%20day&type=playlist", {
       headers: {
         Accept: "application/json",
         Authorization: "Bearer " + accessToken,
@@ -64,14 +64,14 @@ function getPlaylists() {
         playlistImage.setAttribute("src",data.playlists.items[i].images[0].url);
         playlistImage.setAttribute("alt","playlist image");
         playlistImage.setAttribute("uk-cover","");
-        playlistImage.style.width = "600px";
-        playlistImage.style.height = "400px";
+        playlistImage.style.width = "100px";
+        playlistImage.style.height = "100px";
         playlistCover.appendChild(playlistImage);
         //canvas element for image styline
-        // var CanvasEl = document.createElement("canvas");
-        // CanvasEl.setAttribute("width","600");
-        // CanvasEl.setAttribute("height","400");
-        // cardCover.appendChild(CanvasEl);  
+        var CanvasEl = document.createElement("canvas");
+        CanvasEl.setAttribute("width","");
+        CanvasEl.setAttribute("height","auto");
+        cardCover.appendChild(CanvasEl);  
         // console.log("Playlist Image - " + data.playlists.items[i].images[0].url);
         // console.log("Playlist Link - " + data.playlists.items[i].external_urls.spotify);  
         //create card body
