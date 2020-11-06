@@ -4,6 +4,13 @@ html {
   background-size: cover;
 }
 
+/* 
+#img.source-image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+} */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -52,6 +59,7 @@ h4 {
 .border {
   border-bottom: solid black 1px;
   padding: 10px;
+<<<<<<< HEAD
 }
 
 .uk-card{
@@ -103,4 +111,6 @@ h4 {
 
 .uk-heading-line {
   text-decoration-color: black;
+=======
+>>>>>>> main
 }

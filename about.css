@@ -1,0 +1,71 @@
+html {
+    background: url(https://images.unsplash.com/photo-1565130838609-c3a86655db61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60)
+      no-repeat center fixed;
+    background-size: cover;
+  }
+  
+  /* 
+  #img.source-image {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+  } */
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  #logo {
+    font-size: large;
+    color: black;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 3rem;
+  }
+  
+  #leftIcon {
+    padding: 5px;
+  }
+  
+  #rightIcon {
+    margin-top: 5px;
+    transform: rotateY(180deg);
+  }
+  
+  .link {
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 15px;
+  }
+  
+  .icon {
+    color: black;
+    margin-left: 5px;
+  }
+  
+  .border {
+    border-bottom: solid black 1px;
+    padding: 10px;
+  }
+
+.aboutTitle {
+    text-align: center;
+    color: black;
+}
+
+.description {
+    color: black;
+    text-align: center;
+}
+
+.techUsed {
+    text-align: center;
+    color: black;
+}
+
+.techDescription {
+    text-align: center;
+    color: black;
+}
