@@ -6,6 +6,7 @@ html {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: normal;
 }
 
 #logo {
@@ -74,14 +75,25 @@ p {
 }
 
 .uk-card {
-  background: none;
+  background: whitesmoke;
   border: solid whitesmoke 1px;
+  width: 300px;
+  height: 400px;
 }
 
-.uk-card-title {
+.uk-card {
   color: whitesmoke;
 }
 
+.imgCard {
+  width: 300px;
+  height: 300px;
+}
+
+.uk-card-title {
+  font-weight: bolder;
+  color: black;
+}
 
 h4 {
   color: whitesmoke;
