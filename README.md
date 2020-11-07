@@ -8,4 +8,4 @@ Preview this application with links provided:
 
 ![https://jkeopangna.github.io/project1/](Assets/screenshotLink.jpg "Elemental Listening")
 
-(https://jkeopangna.github.io/project1/ "Elemental Listening")
+[link](https://jkeopangna.github.io/project1/ "Elemental Listening")
