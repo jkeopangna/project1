@@ -75,9 +75,13 @@ p {
 
 .uk-card {
   background: none;
-  color: whitesmoke;
   border: solid whitesmoke 1px;
 }
+
+.uk-card-title {
+  color: whitesmoke;
+}
+
 
 h4 {
   color: whitesmoke;
