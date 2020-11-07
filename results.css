@@ -54,6 +54,10 @@ body {
   margin-left: 10px;
 }
 
+.uk-container {
+  margin-left: 20px;
+}
+
 #currentSearch {
   color: whitesmoke;
   white-space: nowrap;
