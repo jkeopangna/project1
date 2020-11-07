@@ -81,10 +81,10 @@ body {
   font-size: large;
 }
 
-#recentDropdown {
+#recentSearch {
   width: 15rem;
   color: whitesmoke;
-  border: solid 1.5px;
+  /* border: solid 1.5px; */
   background: none;
 }
 
