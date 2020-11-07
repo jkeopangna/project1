@@ -26,6 +26,8 @@
       <div class="uk-navbar-item">
         <a href="index.html" class='link'>Home</a></div>
       <div class="uk-navbar-item">
+          <a href="results.html" class='link'>Search</a></div>
+      <div class="uk-navbar-item">
          <a href="about.html" class='link'>About</a></div>
       </ul>
       </div>
@@ -38,17 +40,21 @@
 </header>
 
 
-<section class="uk-child-width-expand@s uk-text-center" uk-grid>
-        <div class="uk-card uk-card-default uk-card-body" id='searchCard'>
+<section class="uk-child-width-expand@s uk-container" uk-grid>
+        <div class="uk-card uk-card-default uk-card-body uk-child-width-expand" id='searchCard'>
       <form class="uk-search uk-search-default form">
-        <input class="uk-search-input" type="search" placeholder="Enter location..." id='searchBar'></input>
-        <button class='uk-flex-center' uk-icon="soundcloud" id='searchBtn'></button>
+        <h3 id='currentSearch'>
+          Listen:
+        </h3>
+        <input class="uk-search-input" type="search" placeholder="Enter location..." id='searchBar'>
+        <button uk-icon="soundcloud" id='searchBtn'></button>
+                  <div class="uk-divider-small"></div>
         <!-- <div class="uk-flex-center"> -->
           <label class="uk-form-label" for="form-stacked-select">
-            <h3 id='recentSearch'>Recent Locations:</h3>
+            <h3 id='recentSearch'>Recently Visited:</h3>
           </label>
-          <!-- <div class="uk-form-controls"> -->
-              <select class="uk-select uk-form-controls" id="form-stacked-select">
+          <!-- <div class="uk-divider-small"></div> -->
+              <select class="uk-select uk-form-controls" id="recentDropdown">
                   <option class='option'></option>
                   <option class='option'></option>
               </select>
@@ -57,16 +63,17 @@
     </form>
         </div>
   <!-- </div> -->
-  <div class="uk-card uk-card-default uk-card-body" id='weatherCard'>
-        <figure class="">
-          <article class='uk-flex uk-flex-center uk-position-center weather-display' uk-grid>
-          </article>
+  <div class="uk-card uk-card-default uk-card-body uk-child-width-expand@s" id='weatherCard'>
+        <figure class="class='uk-flex uk-flex-center uk-child-width-expand@s uk-flex-inline">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quo quia nemo esse incidunt voluptatum culpa modi qui amet? Soluta non repellat, eveniet reprehenderit quo impedit qui labore laudantium natus, voluptatibus nam velit iure sapiente quae at ipsam animi vero quam illum aliquam cupiditate facilis hic sed totam. Voluptates, fugiat.
+          <!-- <article class='uk-flex uk-flex-center uk-child-width-expand@s weather-display uk-flex-inline' uk-grid>
+          </article> -->
           </figure>
   </div>
         <!-- </div>
       </div> -->
 </section>
-<section>
+<section class='uk-child-width-expand@s'>
   <h1 class="uk-heading-line uk-text-center uk-sticky"><span uk-icon="icon: gitter" id='musicIcon'></span></h1>
 </section>
 <section id='cardResults'>
