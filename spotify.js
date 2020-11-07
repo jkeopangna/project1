@@ -1,3 +1,4 @@
+// dom elements for manipulation
 var cardEl = document.getElementById("cardResults");
 var accessToken = "";
 var searchTerm = JSON.parse(localStorage.getItem("searchStore"));   
@@ -5,8 +6,8 @@ var searchEl = document.getElementById("searchBtn");
 var formEl = document.getElementById("searchForm");
 var inputEl = document.getElementById("searchBar");
 var weatherEl = document.getElementById("weatherCard");
-
-
+var recentEl = document.getElementById("recentAppend");
+var localPlaylists = [];
 
 getSpotify(searchTerm);
           
@@ -78,19 +79,7 @@ function getSpotify(weather) {
     weatherDiv.textContent = weatherType;
     cardBody.appendChild(weatherDiv);
     console.log(weatherType);  
-    
-        // <div class="uk-card-media-top">
-        //   <img src="https://www.weatherbit.io/static/img/icons/c04n.png" alt="">
-        // </div>
-        // <div class="uk-card-body">
-        //   <h3 class="uk-card-title">City</h3>
-        //   <p>Temp:</p>
-        //   <p>Description:</p>
-        // </div>
-    
-    
-    
-    
+        
     //create elements for playlists
     cardEl.innerHTML="";
     console.log(data);
@@ -108,11 +97,13 @@ function getSpotify(weather) {
     //create linked image for playlist cover
     //playlist link
     var playlistCover = document.createElement("a");
+    playlistCover.setAttribute("id","playlist");
     playlistCover.setAttribute("href",data.playlists.items[i].external_urls.spotify);
     playlistCover.setAttribute("target","_blank");
     cardCover.appendChild(playlistCover);
     //playlist image
     var playlistImage = document.createElement("img");
+    playlistImage.setAttribute("id","playlist");
     playlistImage.setAttribute("src",data.playlists.items[i].images[0].url);
     playlistImage.setAttribute("alt","playlist image");
     playlistImage.setAttribute("uk-cover","");
@@ -148,6 +139,7 @@ function getSpotify(weather) {
     numTracks.textContent = "Number of Tracks: " + data.playlists.items[i].tracks.total;        
     // console.log("Number of Tracks - " + data.playlists.items[i].tracks.total);
     }
+    renderRecentPlaylists();
     })
     })
 }
@@ -212,6 +204,7 @@ function getSpotify(weather) {
           }
           console.log(searchTerm);
           console.log(data);
+          // write items to local storage for retrieval
           var storeSearch = JSON.stringify(searchTerm);
           localStorage.setItem("searchStore",storeSearch);
           var cityCode = JSON.stringify(data.data[0].city_name);
@@ -222,6 +215,8 @@ function getSpotify(weather) {
           localStorage.setItem("searchTemp",temp);
           var icon = JSON.stringify(data.data[0].weather.icon);
           localStorage.setItem("searchIcon",icon);
+            
+          //
           getSpotify(searchTerm);
           //array for card element components to pass to car
           
@@ -229,27 +224,52 @@ function getSpotify(weather) {
         
       })
 
-// create event listener for search form
-// took the input from that search form and then passed it to the weather api code in a function in this js
-// and then recalled the spotify playlist function with the new search term
+      //local storage for recent playlists
+function renderRecentPlaylists () {
+    //checks local storage for localScores item
+if(JSON.parse(localStorage.getItem("localPlaylists")) === null) {
+return;
+    }
+    // if localScores is in local storage, parses string to highScoreStore array.
+    recentPlaylists = JSON.parse(localStorage.getItem("localPlaylists"));
+    recentEl.innerHTML="";
+    //for loop to get image and playlist from recentPlaylists and append
+    for(i=0;i<recentPlaylists.length;i++) {
+      var recentLink = document.createElement("a");
+      recentLink.setAttribute("href",recentPlaylists[i].link);
+      var recentImage = document.createElement("img");
+      recentImage.setAttribute("src",recentPlaylists[i].image);
+      recentImage.setAttribute("width","100em");
+      recentImage.setAttribute("height","100em");
+      recentEl.appendChild(recentLink);
+      recentLink.appendChild(recentImage);
+    }
 
+}
 
-  // <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-  //   <div class="uk-card-media-left uk-cover-container">
-  //     <a href="https://open.spotify.com/playlist/37i9dQZF1DXbvABJXBIyiY" target = "_blank"><img src="https://i.scdn.co/image/ab67706f00000003b6aa61c165615f5bc3102ad1" alt="playlist cover" uk-cover></a>
-  //     <canvas width="600" height="400"></canvas>
-  //   </div>
-  //   <div>
-  //     <div class="uk-card-body">
-  //       <h3 class="uk-card-title">RainyDay Lofi</h3>
-  //       <p>Chilled out alternative, rock, indie, acoustic, electro, lofi and whatever else fits the mood.</p>
-  //       <p>Number of Tracks: 52</p>
-  //     </div>
-  //   </div>
-
-  // var fiveDayIcon = document.createElement("img");
-  //     fiveDayIcon.setAttribute("class","card-img-top text-center");
-  //     fiveDayIcon.setAttribute("src","http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
-  //     fiveDayIcon.setAttribute("style","width: 100px;");
-  //     fiveDayIcon.setAttribute("alt","weather icon");
-  //     fiveDayCard.appendChild(fiveDayIcon);
+ // EVENT LISTENER FOR USER SELECTION
+document.addEventListener("click", function(event) {
+        // conditional to evaluate element id click
+        if (event.target.matches("#playlist")) {
+        var playlistImage = event.target.src;
+        var playlistLink = event.target.parentElement.href;
+        var playlistPush = {
+            image: playlistImage,
+            link: playlistLink,
+            // score: quizTime
+        }
+        // pushes values from userScore to highScoreStore variable
+        var playlistStore = localStorage.getItem("localPlaylists"); 
+        if (playlistStore === null) {
+            recentPlaylists = [];
+        } 
+        else {
+        recentPlaylists = JSON.parse(playlistStore);
+        }
+        recentPlaylists.push(playlistPush);
+        var storeLists = JSON.stringify(recentPlaylists);
+        localStorage.setItem("localPlaylists", storeLists);
+        console.log(recentPlaylists);
+        }
+});
+        

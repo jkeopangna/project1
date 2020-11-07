@@ -75,9 +75,7 @@ formEl.addEventListener("submit", function(event) {
           localStorage.setItem("searchTemp",temp);
           var icon = JSON.stringify(data.data[0].weather.icon);
           localStorage.setItem("searchIcon",icon);
-          
-
-
+          //switch to results page
           document.location.replace('./results.html');
         })
         
