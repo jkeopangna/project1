@@ -14,7 +14,7 @@ formEl.addEventListener("submit", function(event) {
   console.log(zipCode);
   
 
-  weatherUrl = "https://api.weatherbit.io/v2.0/current?postal_code=" + zipCode + "&country=US&I&key=e6603d28875d4e64a64f4b64ce96d78b";
+  weatherUrl = "https://api.weatherbit.io/v2.0/current?postal_code=" + zipCode + "&country=US&units=I&key=e6603d28875d4e64a64f4b64ce96d78b";
   // fetches weather description code from api
   fetch(weatherUrl)
       .then(function (response) {
@@ -58,14 +58,27 @@ formEl.addEventListener("submit", function(event) {
             searchTerm = "foggy";
             break;
             case '80':
-            searchTerm = "clear%20sky";
+            if(data.data[0].weather.code===800) {
+              searchTerm = "clear%20sky"
+            } else {searchTerm = "cloudy"};
             break;  
           }
           console.log(searchTerm);
+            // set weather variables in local storage for retrieval on results page
           var storeSearch = JSON.stringify(searchTerm);
           localStorage.setItem("searchStore",storeSearch);
-          document.location.replace('./results.html');
+          var cityCode = JSON.stringify(data.data[0].city_name);
+          localStorage.setItem("searchCity",cityCode);
+          var weatherType = JSON.stringify(data.data[0].weather.description);
+          localStorage.setItem("searchType",weatherType);
+          var temp = JSON.stringify(data.data[0].app_temp);
+          localStorage.setItem("searchTemp",temp);
+          var icon = JSON.stringify(data.data[0].weather.icon);
+          localStorage.setItem("searchIcon",icon);
           
+
+
+          document.location.replace('./results.html');
         })
         
       })             

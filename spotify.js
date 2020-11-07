@@ -1,6 +1,13 @@
 var cardEl = document.getElementById("cardResults");
 var accessToken = "";
 var searchTerm = JSON.parse(localStorage.getItem("searchStore"));   
+var searchEl = document.getElementById("searchBtn");
+var formEl = document.getElementById("searchForm");
+var inputEl = document.getElementById("searchBar");
+var weatherEl = document.getElementById("weatherCard");
+
+
+
 getSpotify(searchTerm);
           
 function getSpotify(weather) { 
@@ -32,8 +39,62 @@ function getSpotify(weather) {
     return response.json();
     })
     .then(function (data) {
+    weatherEl.innerHTML="";  
+    //create card element for weather display
+    var iconStorage = localStorage.getItem("searchIcon");
+    var icon = JSON.parse(iconStorage);
+    var iconDiv = document.createElement("div");
+    iconDiv.setAttribute("class","uk-card-media-top");
+    weatherEl.appendChild(iconDiv);
+    var imageDiv = document.createElement("img");
+    imageDiv.setAttribute("class","uk-align-center");
+    imageDiv.setAttribute("src","https://www.weatherbit.io/static/img/icons/"+ icon + ".png");
+    imageDiv.setAttribute("alt","weather icon");
+    iconDiv.appendChild(imageDiv);
+    console.log(icon);
+
+    var cardBody = document.createElement("div");
+    cardBody.setAttribute("class","uk-card-body");
+    weatherEl.appendChild(cardBody);
     
+    var cityStorage = localStorage.getItem("searchCity");
+    var cityCode = JSON.parse(cityStorage);
+    var cityDiv = document.createElement("h3");
+    cityDiv.setAttribute("class","uk-card-title");
+    cityDiv.textContent = "City: " + cityCode;
+    cardBody.appendChild(cityDiv);
+    console.log(cityCode);
+    var tempStorage = localStorage.getItem("searchTemp");
+    var temp = JSON.parse(tempStorage);
+    var tempDiv = document.createElement("h3");
+    
+    tempDiv.textContent = "Temp: " + temp + "\xb0";
+    cardBody.appendChild(tempDiv);
+    console.log(temp);
+    var weatherStorage = localStorage.getItem("searchType");
+    var weatherType = JSON.parse(weatherStorage);
+    var weatherDiv = document.createElement("h3");
+    
+    weatherDiv.textContent = weatherType;
+    cardBody.appendChild(weatherDiv);
+    console.log(weatherType);  
+    
+        // <div class="uk-card-media-top">
+        //   <img src="https://www.weatherbit.io/static/img/icons/c04n.png" alt="">
+        // </div>
+        // <div class="uk-card-body">
+        //   <h3 class="uk-card-title">City</h3>
+        //   <p>Temp:</p>
+        //   <p>Description:</p>
+        // </div>
+    
+    
+    
+    
+    //create elements for playlists
+    cardEl.innerHTML="";
     console.log(data);
+    
     for(i=0;i<data.playlists.items.length;i++) {
     // create card for playlist  
     var newCard = document.createElement("div");
@@ -60,8 +121,8 @@ function getSpotify(weather) {
     playlistCover.appendChild(playlistImage);
     //canvas element for image styline
     var CanvasEl = document.createElement("canvas");
-    CanvasEl.setAttribute("width","");
-    CanvasEl.setAttribute("height","auto");
+    CanvasEl.setAttribute("width","300");
+    CanvasEl.setAttribute("height","450");
     cardCover.appendChild(CanvasEl);  
     // console.log("Playlist Image - " + data.playlists.items[i].images[0].url);
     // console.log("Playlist Link - " + data.playlists.items[i].external_urls.spotify);  
@@ -86,11 +147,91 @@ function getSpotify(weather) {
     var numTracks = document.createElement("p");
     numTracks.textContent = "Number of Tracks: " + data.playlists.items[i].tracks.total;        
     // console.log("Number of Tracks - " + data.playlists.items[i].tracks.total);
-
     }
     })
     })
 }
+
+
+  formEl.addEventListener("submit", function(event) {
+  event.preventDefault();
+  zipCode = inputEl.value;
+  
+  // zipCode = zipInt.toString();
+  console.log(zipCode);
+  
+
+  weatherUrl = "https://api.weatherbit.io/v2.0/current?postal_code=" + zipCode + "&country=US&units=I&key=e6603d28875d4e64a64f4b64ce96d78b";
+  // fetches weather description code from api
+  fetch(weatherUrl)
+      .then(function (response) {
+        // if(response.ok) {
+        return response.json();
+        // else {return;}
+      })
+      .then(function (data) {
+        console.log(data);
+        // console.log(data.data[0].weather.code);
+          var weatherCode = data.data[0].weather.code;
+          // console.log(weatherCode);
+          var trimCode = weatherCode.toString();
+          // console.log(trimCode);
+          var searchTerm = trimCode.substring(0,2);;
+          // console.log(searchTerm);
+          // switch to evaluate weather term input and pass search param to Spotify fetch
+          switch(searchTerm) {
+            case '20':
+            searchTerm = "stormy%20mood";
+            break;
+            case '23':
+            searchTerm = "stormy%20days";
+            break;
+            case '30':
+            searchTerm = "drizzling";
+            break; 
+            case '50':
+            searchTerm = "rainy%20days";
+            break; 
+            case '60':
+            searchTerm = "snowy";
+            break; 
+            case '61':
+            searchTerm = "snowy%20rain";
+            break;
+            case '62':
+            searchTerm = "heavy%20snow";
+            break; 
+            case '74':
+            searchTerm = "foggy";
+            break;
+            case '80':
+            if(data.data[0].weather.code===800) {
+              searchTerm = "clear%20sky"
+            } else {searchTerm = "cloudy"};
+            break;  
+          }
+          console.log(searchTerm);
+          console.log(data);
+          var storeSearch = JSON.stringify(searchTerm);
+          localStorage.setItem("searchStore",storeSearch);
+          var cityCode = JSON.stringify(data.data[0].city_name);
+          localStorage.setItem("searchCity",cityCode);
+          var weatherType = JSON.stringify(data.data[0].weather.description);
+          localStorage.setItem("searchType",weatherType);
+          var temp = JSON.stringify(data.data[0].app_temp);
+          localStorage.setItem("searchTemp",temp);
+          var icon = JSON.stringify(data.data[0].weather.icon);
+          localStorage.setItem("searchIcon",icon);
+          getSpotify(searchTerm);
+          //array for card element components to pass to car
+          
+        })
+        
+      })
+
+// create event listener for search form
+// took the input from that search form and then passed it to the weather api code in a function in this js
+// and then recalled the spotify playlist function with the new search term
 
 
   // <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
@@ -105,3 +246,10 @@ function getSpotify(weather) {
   //       <p>Number of Tracks: 52</p>
   //     </div>
   //   </div>
+
+  // var fiveDayIcon = document.createElement("img");
+  //     fiveDayIcon.setAttribute("class","card-img-top text-center");
+  //     fiveDayIcon.setAttribute("src","http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
+  //     fiveDayIcon.setAttribute("style","width: 100px;");
+  //     fiveDayIcon.setAttribute("alt","weather icon");
+  //     fiveDayCard.appendChild(fiveDayIcon);
