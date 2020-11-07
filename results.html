@@ -51,14 +51,21 @@
         <button uk-icon="soundcloud" id='searchBtn'></button>
                   <div class="uk-divider-small"></div>
         <!-- <div class="uk-flex-center"> -->
-          <label class="uk-form-label" for="form-stacked-select">
+          <!-- <label class="uk-form-label" for="form-stacked-select">
             <h3 id='recentSearch'>Recently Visited:</h3>
-          </label>
+          </label> -->
           <!-- <div class="uk-divider-small"></div> -->
-              <select class="uk-select uk-form-controls" id="recentDropdown">
+          <ul uk-accordion uk-flex>
+            <li class="uk-closed">
+              <a class="uk-accordion-title" href="#">Recently Played</a>
+              <div class="uk-accordion-content" uk-margin id="recentAppend">
+                
+            </li>
+          </ul>
+          <!-- <select class="uk-select uk-form-controls" id="recentDropdown">
                   <option class='option'></option>
                   <option class='option'></option>
-              </select>
+              </select> -->
           <!-- </div> -->
       <!-- </div> -->
     </form>
