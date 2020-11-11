@@ -27,8 +27,9 @@ function getSpotify(weather) {
     .then(function (data) {
     accessToken = data.access_token;  
     //fetch method to retrieve playlists from spotify
+    var offset = Math.floor(Math.random() * 5);
 
-    var spotifyUrl = "https://api.spotify.com/v1/search?q=" + weather + "&type=playlist";
+    var spotifyUrl = "https://api.spotify.com/v1/search?q=" + weather + "&limit=10&offset=" + offset + "&type=playlist";
     fetch(spotifyUrl, {
     headers: {
     Accept: "application/json",
